@@ -31,7 +31,8 @@ body {
     background-color: $gray;
 
     h1 {
-        display: none;
+        position: absolute;
+        right: 100%;
     }
 
     main {

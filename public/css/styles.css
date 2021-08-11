@@ -21,7 +21,8 @@ body {
   background-color: #f2f2f2;
 }
 body h1 {
-  display: none;
+  position: absolute;
+  right: 100%;
 }
 body main {
   max-width: 327px;
