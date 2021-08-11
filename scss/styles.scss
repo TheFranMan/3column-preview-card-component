@@ -22,17 +22,22 @@ body {
 }
 
 body {
+    min-height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: $gray;
+
+    @media (min-width: $breakpoint) {
+        height: 100vh;
+    }
 
     main {
         max-width: 327px;
         border-radius: 10px;
         font-size: $fz-reg;
         color: $gray;
-        margin-top: 100px;
+        margin: 100px 0;
         font-family: 'Lexend Deca', sans-serif;
 
         @media (min-width: $breakpoint) {
