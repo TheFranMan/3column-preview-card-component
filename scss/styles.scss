@@ -9,6 +9,7 @@ $fz-reg: .94rem;
 
 $breakpoint: 1000px;
 
+*,
 *::before,
 *::after {
     padding: 0;
@@ -16,25 +17,21 @@ $breakpoint: 1000px;
     box-sizing: border-box;
 }
 
-html,
-body {
+html {
+    height: 100%;
+  }
+  body {
     min-height: 100%;
-}
+  }
 
 body {
-    min-height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: $gray;
 
-    @media (min-width: $breakpoint) {
-        height: 100vh;
-    }
-
     h1 {
-        position: absolute;
-        right: 100%;
+        display: none;
     }
 
     main {
@@ -48,6 +45,7 @@ body {
         @media (min-width: $breakpoint) {
             display: flex;
             max-width: 920px;
+            margin: 0;
         }
 
         section {
