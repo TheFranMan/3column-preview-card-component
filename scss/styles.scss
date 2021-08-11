@@ -1,4 +1,14 @@
-*,
+$orange: hsl(31, 77%, 52%);
+$cyan: hsl(184, 100%, 22%);
+$dark-cyan: hsl(179, 100%, 13%);
+$white: hsla(0, 0%, 100%, 0.75);
+$gray: hsl(0, 0%, 95%);
+
+$radius: 10px;
+$fz-reg: .94rem;
+
+$breakpoint: 1000px;
+
 *::before,
 *::after {
     padding: 0;
@@ -9,4 +19,108 @@
 html,
 body {
     min-height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $gray;
+
+    main {
+        max-width: 327px;
+        border-radius: 10px;
+        font-size: $fz-reg;
+        color: $gray;
+        margin-top: 100px;
+        font-family: 'Lexend Deca', sans-serif;
+
+        @media (min-width: $breakpoint) {
+            display: flex;
+            max-width: 920px;
+        }
+
+        section {
+            padding: 3em;
+
+            .title {
+                font-family: 'Big Shoulders Display', cursive;
+                text-transform: uppercase;
+                margin: .7em 0;
+                font-size: 2.5rem;
+            }
+
+            .description {
+                color: $white;
+                line-height: 1.7;
+            }
+
+            &.sedans {
+                background-color: $orange;
+                border-radius: $radius $radius 0 0;
+
+                @media (min-width: $breakpoint) {
+                    border-radius: $radius 0 0 $radius;
+                }
+
+                .learn-more {
+                    color: $orange;
+
+                    &:hover {
+                        background-color: $orange;
+                    }
+                }
+            }
+
+            &.suvs {
+                background-color: $cyan;
+
+                .learn-more {
+                    color: $cyan;
+
+                    &:hover {
+                        background-color: $cyan;
+                    }
+                }
+            }
+
+            &.luxury {
+                background-color: $dark-cyan;
+                border-radius: 0 0 $radius $radius;
+
+                @media (min-width: $breakpoint) {
+                    border-radius: 0 $radius $radius 0;
+                }
+
+                .learn-more {
+                    color: $dark-cyan;
+
+                    &:hover {
+                        background-color: $dark-cyan;
+                    }
+                }
+            }
+
+            .learn-more {
+                margin-top: 2em;
+                width: 146px;
+                padding: 1em;
+                font-size: $fz-reg;
+                border: 2px solid $gray;
+                background-color: $gray;
+                border-radius: 25px;
+                outline: none;
+                transition: all .2s ease-in-out;
+
+                @media (min-width: $breakpoint) {
+                    margin-top: 4em;
+                }
+
+                &:hover {
+                    color: $gray;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
 }
